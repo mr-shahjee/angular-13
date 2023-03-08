@@ -12,6 +12,7 @@ export class DarkModeToggleComponent {
 
   constructor(private darkModeService: DarkModeService) {}
 
+
   onToggle(): void {
     this.darkModeService.toggle();
   }
