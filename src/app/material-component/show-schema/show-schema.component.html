@@ -1,0 +1,30 @@
+<mat-card>
+	<mat-card-content>
+<div class="container" [formGroup]="schemaForm">
+    <div class="row">
+        <div class="col-md-2 mt-4">
+            <!-- <button mat-raised-button color="warn" (click)="getSchemaData()" >Show Schema</button> -->
+            
+            <mat-form-field appearance="outline" >
+                <mat-label>Schema Name</mat-label>
+                <mat-select  placeholder="Category" (valueChange)="getDropDownList($event)">
+                    <mat-option *ngFor="let item of name" [value]="item.schemaId">{{item.schemaName}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+            </div>
+    </div>
+</div>
+
+
+<div class="container mt-4" >
+   <div class="row">
+    <div class="col">
+        <p>Generated Form</p>
+<formio *ngIf="selectedVal"  [form]='selectedVal'  > </formio>
+        
+    </div>
+   </div>
+</div>
+</mat-card-content>
+</mat-card>
+

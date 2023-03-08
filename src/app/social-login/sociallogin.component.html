@@ -1,0 +1,40 @@
+
+     <div class="card mt-2 text-center">
+        <h6 class="card-header">
+             Login with Google in Angular
+        </h6>
+        <div class="card-block">
+            <h4 class="card-title">Not signed in</h4>
+        </div>
+        <div class="card-block mb-4">
+            <button mat-raised-button color="warn" (click)="signinWithGoogle()">
+              Google
+            </button>
+        </div>
+     </div>
+     <div *ngIf="user" class="card text-center">
+        <h6 class="card-header">
+            Login with google in angular
+        </h6>
+        <div class="card-block"></div>
+        <img *ngIf="user.photoUrl" src="{{user.photoUrl}}" alt="" class="card-img-top img-responsive">
+        <div class="card-block">
+            <h4 class="card-title">{{user.name}}</h4>
+            <p class="card-text">{{user.email}}</p>
+            <p class="card-text">Logged in with : {{user.provider}}</p>
+        </div>
+        <div class="card-block">
+            <button class="btn btn-danger" (click)="signOut()">signOut</button>
+        </div>
+        
+    </div>
+
+
+
+<!-- <mat-card class="example-card">
+    <mat-card-title>Login Google</mat-card-title><hr>
+    <mat-card-content> -->
+<!-- <button mat-raised-button color="warn">Google Signin</button> -->
+
+    <!-- </mat-card-content>
+  </mat-card> -->

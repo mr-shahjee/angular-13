@@ -1,0 +1,51 @@
+<mat-card>
+	<mat-card-content>
+<div class="container mt-4">
+  <div class="row">
+     <div class="col-md-12">
+        <form [formGroup]="schemaForm">
+        <mat-form-field appearance="outline">
+           <mat-label>Schema Name</mat-label>
+           <input matInput formControlName="schemaName" placeholder="Schema Name">
+       </mat-form-field>
+     </form>
+        <form-builder [form]="form" (change?)="onChange()"></form-builder>
+     </div>
+  </div>
+</div>
+
+
+<hr>
+
+<h2 class="text-center text-muted">As JSON Schema</h2>
+
+<div class="container">
+  <div class="row">
+     <div class="col-md-4">
+        <div class="well jsonviewer">
+
+           <pre id="json" class="language-json" tabindex="0">
+  <code  #json class="language-json">
+     {{form|json}}
+  </code></pre>
+        </div>
+        <button mat-raised-button color="primary" (click)="addSchema()">Save Schema</button>
+     </div>
+  </div>
+</div>
+
+<hr>
+
+<h2 class="text-center text-muted">As Rendered Form</h2>
+<div class="container">
+  <div class="row">
+     <div class="col-md-12">
+        <formio (change)="onChange()" [form]='data'> </formio>
+     </div>
+  </div>
+</div>
+
+
+
+  </mat-card-content>
+  </mat-card>

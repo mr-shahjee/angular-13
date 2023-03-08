@@ -1,0 +1,75 @@
+<!-- ============================================================== -->
+<!-- sidebar -->
+<!-- ============================================================== -->
+<mat-nav-list appAccordion>
+    <mat-list-item appAccordionLink *ngFor="let menuitem of menuItems.getMenuitem()" routerLinkActive="selected" group="{{menuitem.state}}">
+      
+         <a class="" appAccordionToggle [routerLink]="['material-component/dashboard']" *ngIf="menuitem.type === 'link'">
+            <mat-icon>{{ menuitem.icon }}</mat-icon> 
+            <span>{{ menuitem.name }}</span> 
+            <span fxFlex></span> 
+            <span class="label label-{{ badge.type }}" *ngFor="let badge of menuitem.badge">{{ badge.value }}</span> 
+        </a>
+
+      <!-- <a class="" appAccordionToggle [routerLink]="['/', menuitem.state]" *ngIf="menuitem.type === 'link'">
+            <mat-icon>{{ menuitem.icon }}</mat-icon> 
+            <span>{{ menuitem.name }}</span> 
+            <span fxFlex></span> 
+            <span class="label label-{{ badge.type }}" *ngFor="let badge of menuitem.badge">{{ badge.value }}</span> 
+        </a> -->
+
+        
+    </mat-list-item>
+    <mat-list-item>
+    <mat-expansion-panel (opened)="panelOpenState = true"
+    (closed)="panelOpenState = false">
+    <mat-expansion-panel-header>
+        <mat-panel-title >
+          <i class="bi bi-hospital-fill"></i>&nbsp;
+          Patients
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="material-component/new-appointment" routerLinkActive="active">
+          <span data-feather="file" class="align-text-bottom"></span>
+          <i class="bi bi-eye-fill"></i>
+          New Appointment
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="material-component/grid" routerLinkActive="active">
+          <span data-feather="file" class="align-text-bottom"></span>
+          <i class="bi bi-eye-fill"></i>
+          View Appointments
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="material-component/builder" routerLinkActive="active">
+          <span data-feather="shopping-cart" class="align-text-bottom"></span>
+          Form Builder
+        </a>
+      </li>
+   
+    </mat-expansion-panel>
+</mat-list-item>
+<mat-list-item>
+  <mat-expansion-panel (opened)="panelOpenState = true"
+  (closed)="panelOpenState = false">
+  <mat-expansion-panel-header>
+      <mat-panel-title >
+        <i class="bi bi-hospital-fill"></i>&nbsp;
+        Outcome Tools
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="material-component/gad7" routerLinkActive="active">
+        <span data-feather="file" class="align-text-bottom"></span>
+        <i class="bi bi-eye-fill"></i>
+        GAD7
+      </a>
+    </li>
+ 
+  </mat-expansion-panel>
+</mat-list-item>
+
+</mat-nav-list>

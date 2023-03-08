@@ -1,0 +1,221 @@
+<mat-card>
+	<mat-card-content>
+		<form [formGroup]="gad7Forms" (ngSubmit)="onSubmit()">
+			<div class="container mt-3">
+				<div class="row">
+					<div class="col-md-6">
+						<mat-form-field appearance="outline">
+							<mat-label>Gad7 Date</mat-label>
+							<input formControlName="gad7Date" matInput [matDatepicker]="picker">
+							<mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+							<mat-datepicker #picker></mat-datepicker>
+						</mat-form-field>
+					</div>
+					<div class="col-md-6">
+						<mat-form-field class="example-full-width" appearance="outline">
+							<mat-label> Select</mat-label>
+							<mat-select formControlName="treatmentStage">
+								<mat-option value="Treatment Start">Treatment Start</mat-option>
+								<mat-option value="Review">Review</mat-option>
+								<mat-option value="Treatment Exit">Treatment Exit</mat-option>
+								<mat-option value="Post-Treatment Exit">Post-Treatment Exit</mat-option>
+							</mat-select>
+						</mat-form-field>
+					</div>
+
+
+				</div>
+			</div>
+
+
+			<div class="container-form mt-4">
+				<div class="row">
+					<div class="col-md-5">
+						<h4>Feeling nervous, anxious or on edge? </h4>
+					</div>
+					<div class="col-md-4">
+						<mat-form-field class="example-full-width" appearance="outline">
+							<mat-label>Select</mat-label>
+							<mat-select #select (selectionChange)="onChange1($event.value)">
+								<mat-option *ngFor="let item of items" [value]="item.value"> {{item.viewValue}}
+								</mat-option>
+
+							</mat-select>
+
+						</mat-form-field>
+					</div>
+					<div class="col-md-2">
+						<mat-form-field class="example-full-width" appearance="outline">
+							<input #firstone matInput value="{{select.value}}" readonly placeholder=" ">
+						</mat-form-field>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-5">
+						<h4>Not being able to stop or control worrying? </h4>
+					</div>
+					<div class="col-md-4">
+						<mat-form-field class="example-full-width" appearance="outline">
+							<mat-label>Select</mat-label>
+							<mat-select #select1 (selectionChange)="onChange2(select1.value)">
+								<mat-option #id1 *ngFor="let item of items" [value]="item.value">{{item.viewValue}}
+								</mat-option>
+							</mat-select>
+						</mat-form-field>
+					</div>
+					<div class="col-md-2">
+						<mat-form-field class="example-full-width" appearance="outline">
+							<input #secondone matInput value="{{select1.value}}" readonly placeholder="">
+						</mat-form-field>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-5">
+						<h4>Worrying too much about different things? </h4>
+					</div>
+					<div class="col-md-4">
+						<mat-form-field class="example-full-width" appearance="outline">
+							<mat-label>Select</mat-label>
+							<mat-select #select2 (selectionChange)="onChange3($event.value)">
+								<mat-option *ngFor="let item of items" [value]="item.value">{{item.viewValue}}
+								</mat-option>
+							</mat-select>
+						</mat-form-field>
+					</div>
+					<div class="col-md-2">
+						<mat-form-field class="example-full-width" appearance="outline">
+							<input #third matInput value="{{select2.value}}" readonly placeholder="">
+						</mat-form-field>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-5">
+						<h4>Trouble relaxing? </h4>
+					</div>
+					<div class="col-md-4">
+						<mat-form-field class="example-full-width" appearance="outline">
+							<mat-label>Select</mat-label>
+							<mat-select #select3 (selectionChange)="onChange4($event.value)">
+								<mat-option *ngFor="let item of items" [value]="item.value">{{item.viewValue}}
+								</mat-option>
+							</mat-select>
+						</mat-form-field>
+					</div>
+					<div class="col-md-2">
+						<mat-form-field class="example-full-width" appearance="outline">
+							<input #forth matInput value="{{select3.value}}" readonly placeholder="">
+						</mat-form-field>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-5">
+						<h4>Being so restless that it is hard to sit still? </h4>
+					</div>
+					<div class="col-md-4">
+						<mat-form-field class="example-full-width" appearance="outline">
+							<mat-label>Select</mat-label>
+							<mat-select #select4 (selectionChange)="onChange5($event.value)">
+								<mat-option *ngFor="let item of items" [value]="item.value">{{item.viewValue}}
+								</mat-option>
+							</mat-select>
+						</mat-form-field>
+					</div>
+					<div class="col-md-2">
+						<mat-form-field class="example-full-width" appearance="outline">
+							<input #five matInput value="{{select4.value}}" readonly placeholder="">
+						</mat-form-field>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-5">
+						<h4>Becoming easily annoyed or irritable? </h4>
+					</div>
+					<div class="col-md-4">
+						<mat-form-field class="example-full-width" appearance="outline">
+							<mat-label>Select</mat-label>
+							<mat-select #select5 (selectionChange)="onChange6($event.value)">
+								<mat-option *ngFor="let item of items" [value]="item.value">{{item.viewValue}}
+								</mat-option>
+							</mat-select>
+						</mat-form-field>
+					</div>
+					<div class="col-md-2">
+						<mat-form-field class="example-full-width" appearance="outline">
+							<input #six matInput value="{{select5.value}}" readonly placeholder="">
+						</mat-form-field>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-5">
+						<h4>Feeling afraid as if something awful might happen? </h4>
+					</div>
+					<div class="col-md-4">
+						<mat-form-field class="example-full-width" appearance="outline">
+							<mat-label>Select</mat-label>
+							<mat-select #select6 (selectionChange)="onChange7($event.value)">
+								<mat-option *ngFor="let item of items" [value]="item.value">{{item.viewValue}}
+								</mat-option>
+							</mat-select>
+						</mat-form-field>
+					</div>
+					<div class="col-md-2">
+						<mat-form-field class="example-full-width" appearance="outline">
+							<input #seven matInput value="{{select6.value}}" readonly placeholder="">
+						</mat-form-field>
+					</div>
+				</div>
+			</div>
+			<div class="row mt-4">
+				<div class="col-md-7">
+
+				</div>
+				<div class="col-md-2 mt-4">
+					<p>Total Score: </p>
+				</div>
+
+				<div class="col-md-2">
+					<mat-form-field class="example-full-width" appearance="outline">
+						<input type="text" name="totalscr" [readonly]="true" matInput [value]="cal">
+					</mat-form-field>
+				</div>
+			</div>
+
+			<div class="row mb-4">
+				<div class="col-md-1">
+					<button mat-raised-button color="default">Cancel</button>
+				</div>
+				<div class="col-md-1 ml-4">
+					<button mat-raised-button (click)="checkValidate()" color="primary" id="btn2">Submit</button>
+
+				</div>
+				<div class="col-md-7">
+					<p></p>
+				</div>
+			</div>
+
+
+		</form>
+
+<hr>
+
+		<div class="container">
+			<div class="row">
+				<kendo-grid  #myGrid [kendoGridBinding]="gridData" [pageSize]="10" [pageable]="true" [sortable]="true"
+					[filterable]="true" [groupable]="true" [height]="420"  (dblclick)="dblClickEvent(myGrid, $event)" >
+					<kendo-grid-column field="gad7Id" title="Gad7 Id" [width]="100"></kendo-grid-column>
+					<kendo-grid-column field="gad7Date" title="Gad7 Date" [width]="140"></kendo-grid-column>
+					<kendo-grid-column field="treatmentStage" title="Treatment Stage" [width]="120"></kendo-grid-column>
+					<kendo-grid-column field="score" title="Score" [width]="100"></kendo-grid-column>
+
+
+				</kendo-grid>
+
+			</div>
+		</div>
+
+
+
+		<!-- <button id="topBot"  (click)="gotoTop()">TOP</button> -->
+	</mat-card-content>
+</mat-card>
+

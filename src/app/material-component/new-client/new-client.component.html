@@ -1,0 +1,53 @@
+<h1 mat-dialog-title>Patients Info Form</h1>
+
+<form [formGroup]="clientForm">
+    <div mat-dialog-content>
+        <mat-form-field appearance="outline">
+            <mat-label>Patient Name</mat-label>
+            <input matInput formControlName="patientName" placeholder="Patient Name">
+        </mat-form-field>
+    
+        <mat-form-field appearance="outline">
+            <mat-label>Patient Last Name</mat-label>
+            <input matInput formControlName="patientLastName" placeholder="Patient Last Name">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Gender</mat-label>
+            <mat-select formControlName="gender" placeholder="Gender">
+                <mat-option  value="Male" >Male</mat-option>
+                <mat-option  value="Female" >Female</mat-option>
+                <mat-option  value="Not Known" >Not Known</mat-option>
+            </mat-select>
+        </mat-form-field>
+    
+        <mat-form-field appearance="outline">
+            <mat-label>Date of birth</mat-label>
+            <input formControlName="date" formControlName="date" matInput [matDatepicker]="picker">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+    
+        <mat-form-field appearance="outline">
+            <mat-label>Patient CNIC</mat-label>
+            <input matInput formControlName="cnic" placeholder="Patient CNIC">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Patient Contact No</mat-label>
+            <input matInput formControlName="contactNo" placeholder="Patient Contact No">
+        </mat-form-field>
+    
+        <mat-form-field appearance="outline">
+            <mat-label>Comments</mat-label>
+            <textarea formControlName="comment" matInput placeholder="Comments" cols="30" rows="5"></textarea>
+        </mat-form-field>
+    </div>
+</form>
+
+<div mat-dialog-action [align]="'end'">
+    <button mat-stroked-button mat-dialog-close color="primary">Close</button>
+    <button mat-raised-button  style="margin-left: 8px;" color="primary"  (click)="addProduct()">{{updateBtn}}</button>
+</div>
+
+

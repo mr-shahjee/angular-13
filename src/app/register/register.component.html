@@ -1,0 +1,143 @@
+<p ngClass="IsAccountCreated ? text-success pb-1 : text-danger pb-1">{{displayMsg}}</p>
+
+
+<div class="container">
+  <div class="row">
+    <form [formGroup]="regForm" (submit)="registerSubmited() ">
+    <mat-card class="example-card">
+    <mat-card-title style="padding: 25px;">Registration Form</mat-card-title><hr>
+    <mat-card-content>
+      <mat-form-field appearance="outline">
+        <mat-label>First Name</mat-label>
+        <input type="text" formControlName="firstname" matInput placeholder="FirstName">
+      </mat-form-field>
+        <!-- <input type="text" placeholder="FirstName" formControlName="firstname"><br> -->
+        <mat-form-field appearance="outline">
+          <mat-label>Last Name</mat-label>
+          <input type="text" formControlName="lastname" matInput placeholder="LastName">
+        </mat-form-field>
+        <!-- <input type="text" placeholder="LastName" formControlName="lastname"><br> -->
+        <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <input matInput type="email" formControlName="email" name="email"  placeholder="Email">
+        </mat-form-field>
+        <!-- <input type="email" placeholder="Email" formControlName="email"><br> -->
+        <mat-form-field appearance="outline">
+          <mat-label>Mobile Number</mat-label>
+          <input type="text"  formControlName="mobile" name="mobile"  matInput placeholder="Mobile">
+        </mat-form-field>
+        <!-- <input type="text" placeholder="Mobile" formControlName="mobile"><br> -->
+        <mat-radio-group type="radio" formControlName="gender" aria-labelledby="example-radio-group-label" class="example-radio-group">
+          <mat-radio-button   class="example-radio-button" *ngFor="let rb of radioBtn" [value]="rb">
+              {{rb}}
+          </mat-radio-button>
+      </mat-radio-group>
+        <!-- <input type="radio" id="male" name="gender" value="MALE" formControlName="gender">
+        <label for="male">Male</label><br>
+        <input type="radio" id="female" name="gender" value="FEMALE" formControlName="gender">
+        <label for="female">Female</label><br> -->
+        
+        <mat-form-field appearance="outline">
+          <mat-label>Password</mat-label>
+          <input formControlName="pwd" name="pwd"  matInput placeholder="Password">
+        </mat-form-field>
+        <mat-card-actions>
+          <button style="margin-left:10px;"   mat-raised-button color="warn">Signup</button>
+        </mat-card-actions>
+        
+        
+        <!-- <input type="text" placeholder="Password" formControlName="pwd"><br>
+        <button>Submit</button> -->
+        <a routerLink="/login" style="color: black;">Already member ? click to login </a>
+
+  </mat-card-content>
+
+</mat-card>
+</form>
+  </div>
+</div>
+
+
+
+<!-- <form [formGroup]="regForm" (submit)="registerSubmited()" >
+    <mat-form-field appearance="outline">
+        <mat-label>First Name</mat-label>
+        <input type="text" formControlName="firstname" matInput placeholder="FirstName">
+      </mat-form-field>
+      <input type="text" placeholder="LastName" formControlName="lastname">
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input type="text" formControlName="email" matInput placeholder="Email">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Mobile Number</mat-label>
+        <input  formControlName="mobile"  matInput placeholder="Mobile">
+      </mat-form-field>
+      <mat-radio-group type="radio" formControlName="gender" aria-labelledby="example-radio-group-label" class="example-radio-group">
+        <mat-radio-button   class="example-radio-button" *ngFor="let rb of radioBtn" [value]="rb">
+            {{rb}}
+        </mat-radio-button>
+    </mat-radio-group>
+    <mat-form-field appearance="outline">
+      <mat-label>Password</mat-label>
+      <input type="text" formControlName="pwd"  matInput placeholder="Password">
+    </mat-form-field>
+      <button style="margin-left:10px;"   mat-raised-button color="warn">Signup</button>
+</form>  -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <form [formGroup]="regForm" (submit)="registerSubmited()"> 
+<mat-card class="example-card">
+    <mat-card-title>Signup Form</mat-card-title><hr>
+    <mat-card-content>
+       
+           <mat-form-field appearance="outline">
+        <mat-label>First Name</mat-label>
+        <input type="text" formControlName="firstname" matInput placeholder="FirstName">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Last Name</mat-label>
+        <input type="text" formControlName="lastname" matInput placeholder="LastName">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input formControlName="email" matInput placeholder="Email">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Mobile Number</mat-label>
+        <input  formControlName="mobile"  matInput placeholder="Mobile">
+      </mat-form-field>
+
+      <mat-radio-group type="radio" formControlName="gender" aria-labelledby="example-radio-group-label" class="example-radio-group">
+        <mat-radio-button   class="example-radio-button" *ngFor="let rb of radioBtn" [value]="rb">
+            {{rb}}
+        </mat-radio-button>
+    </mat-radio-group>
+
+
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input formControlName="pwd"  matInput placeholder="Password">
+      </mat-form-field>
+      <mat-card-actions>
+        <button style="margin-left:10px;"   mat-raised-button color="warn">Signup</button>
+      </mat-card-actions>
+
+    </mat-card-content>
+   
+    <a routerLink="/login" style="color: black;">Already member ? click to login </a>
+
+  </mat-card>
+</form> -->

@@ -1,0 +1,48 @@
+
+<mat-card>
+	<mat-card-content>
+<div class="container">
+  <div class="row">
+    
+<div class="col-md-5 " >
+<mat-card class="example-card">
+  <mat-card-title class="text-center">Login Form</mat-card-title><hr>
+  <mat-card-content>
+    <form [formGroup]="loginForm" (submit)="loginSubmited() ">
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput type="email" formControlName="email" name="email"  placeholder="Email">
+      </mat-form-field>
+      <div class="form-text text-danger" *ngIf="Email.errors?.['required'] && (Email.dirty || Email.touched)">Email is required</div>
+      <div class="form-text text-danger" *ngIf="Email.errors?.['email'] && (Email.dirty || Email.touched)">Email is Invalid</div>
+      
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input formControlName="pwd" name="pwd"  matInput placeholder="Password">
+      </mat-form-field>
+      <div class="form-text text-danger" *ngIf="Pwd.errors?.['required'] && (Pwd.dirty || Pwd.touched)">Password is required</div>
+      <div class="form-text text-danger" *ngIf="Pwd.errors?.['minlength'] || Pwd.errors?.['maxlength'] && (Email.dirty || Email.touched)">Password should be at least 6 and at the max 15 chracters long</div>
+
+      <mat-card-actions>
+        <button style="margin-left:10px;" [disabled]="loginForm.invalid"  mat-raised-button color="warn">Login</button>
+      </mat-card-actions>
+    </form>
+    <a routerLink="/register" style="color: black; padding-top: 10px;"> New User ? click to Signup </a>
+
+</mat-card-content>
+</mat-card>
+</div>
+<div class="col-md-5 text-center">
+<mat-card class="example-card">
+  <mat-card-title class="text-center">Login Google</mat-card-title><hr>
+  <mat-card-content>
+<app-sociallogin></app-sociallogin>
+</mat-card-content>
+</mat-card>
+</div>
+  </div>
+</div>
+</mat-card-content>
+</mat-card>
+
+<button [routerLink]="['/dark-mode']">Click</button>

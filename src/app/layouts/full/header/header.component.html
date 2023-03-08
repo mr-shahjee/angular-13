@@ -1,0 +1,45 @@
+
+<!-- ============================================================== -->
+<!-- Profile - style you can find in header.scss -->
+<!-- ============================================================== -->
+
+<button mat-icon-button class="matero-toolbar-button" fxHide.lt-sm
+(click)="toggleFullscreen()"><mat-icon>fullscreen</mat-icon>
+</button>
+
+<h3 style="color: white; display: inline-block; padding-right: 15px;">{{message}} </h3>
+<!-- <app-gad7 (itemEvent)="addItem($event)"></app-gad7> -->
+ <a  #icon href="" data-toggle="modal" data-target="#exampleModal" style="color: white;"><svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+  </svg>
+ </a>
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color: #5867dd;">
+          <h5 class="modal-title" style="color: black;" id="exampleModalLabel" >{{message}}</h5>
+          <button type="button" style="background-color : white;" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div  class="modal-body">
+         <app-grid (dblclick)="clickMe()"></app-grid>
+        </div>
+      </div>
+    </div>
+  </div>
+  &nbsp;
+  <a  class=" m-r-20 hidden-sm-up" mat-raised-button style="background-color: #69F0AE; color:black; " (click)="openDialog()">Add New Patient</a>
+<button [matMenuTriggerFor]="profile" mat-icon-button class="m-r-5"> <img src="assets/images/users/1.jpg" alt="user" class="profile-pic"> </button>
+<mat-menu #profile="matMenu" class="mymegamenu">
+    <button mat-menu-item [routerLink]="['material-component/dark']">
+        <mat-icon>settings</mat-icon> Settings </button>
+    <button mat-menu-item [routerLink]="['material-component/profile']">
+        <mat-icon>account_box</mat-icon> Profile </button>
+    <button mat-menu-item>
+        <mat-icon>notifications_off</mat-icon> Disable notifications </button>
+    <button   mat-menu-item (click)="logout()">
+        <mat-icon>exit_to_app</mat-icon> Sign Out </button>
+</mat-menu>
+
